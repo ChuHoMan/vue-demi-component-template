@@ -1,0 +1,26 @@
+{
+	"name": "vue2-playground",
+	"version": "1.0.0",
+    "private": true,
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build"
+	},
+	"author": "ChuHoMan",
+	"license": "MIT",
+	"repository": {
+		"type": "git"
+	},
+	"peerDependencies": {
+		"@vue/composition-api": "^1.4.9",
+		"vue": "^2.6.0 || >=3.0.0"
+	},
+	"peerDependenciesMeta": {
+		"@vue/composition-api": {
+			"optional": true
+		}
+	},
+	"devDependencies": {
+		"vue": "^2.6.0"
+	}
+}

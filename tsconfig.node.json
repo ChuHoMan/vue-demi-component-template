@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "esnext",
+    "moduleResolution": "node"
+  },
+  "include": [
+    "vite.config.ts",
+    "vite.vue2.config.ts",
+    "vite.vue3.config.ts"
+  ]
+}
