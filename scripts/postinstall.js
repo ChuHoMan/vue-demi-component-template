@@ -20,8 +20,9 @@ async function switchVersion() {
   }
 
   const isVue2 = version.startsWith('2.')
+  const isVue27 = version.startsWith('2.7.')
 
-  const distDir = `dist/${isVue2 ? 'v2' : 'v3'}`
+  const distDir = `dist/${isVue2 ? isVue27 ? 'v2.7' : 'v2' : 'v3'}`
 
   const exportJson = {
     main: `${distDir}/index.umd.js`,

@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import * as path from 'path'
 import { isVue2, isVue3 } from 'vue-demi'
@@ -38,5 +39,11 @@ export const baseBuildConfig = defineConfig({
   },
   optimizeDeps: {
     exclude: ['vue-demi', 'vue', 'vue2']
+  },
+  test: {
+    globals: true,
+    // root: path.resolve(__dirname, '../../packages/sell-ui/components'),
+    environment: 'jsdom',
+    include: ['**/__tests__/**/*.spec.ts']
   }
 })

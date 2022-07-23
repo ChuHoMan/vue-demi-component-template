@@ -1,8 +1,9 @@
-import Vue from 'vue'
+import Vue, { version} from 'vue'
 import App from './App.vue'
 import TemplateComponent from '../src/index'
 
-console.warn('Vue version:', Vue.version)
+
+console.warn('Vue version: ', version)
 Vue.config.productionTip = false
 Vue.use(TemplateComponent)
 
