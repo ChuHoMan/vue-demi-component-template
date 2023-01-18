@@ -11,7 +11,7 @@ export const viteVue2Config = defineConfig({
   resolve: {
     alias: {
       vue: resolve(__dirname, './node_modules/vue/dist/vue.runtime.esm.js'),
-      'vue-demi': '../node_modules/vue-demi/lib/v2/index.mjs'
+      'vue-demi': resolve(__dirname, '../node_modules/vue-demi/lib/v2/index.mjs')
     }
   },
   ...baseBuildConfig
