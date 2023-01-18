@@ -14,6 +14,8 @@ export const defaultPlugins = [
   })
 ]
 
+console.log('Vue version:', isVue2 ? 'v2' : 'v3')
+
 // https://vitejs.dev/config/
 export const baseBuildConfig = defineConfig({
   build: {
@@ -42,8 +44,25 @@ export const baseBuildConfig = defineConfig({
   },
   test: {
     globals: true,
-    // root: path.resolve(__dirname, '../../packages/sell-ui/components'),
     environment: 'jsdom',
-    include: ['**/__tests__/**/*.spec.ts']
+    include: [
+      '__test__/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'
+    ],
+    alias: {
+      '@tests/utils': path.resolve(__dirname, `./tests/utils/vueTestUtils.ts`)
+    },
+    setupFiles: [path.resolve(__dirname, 'tests/setup.ts')],
+    deps: {
+      inline: ['vue2', '@vue/composition-api', 'vue-demi', '@vue/test-utils', '@vue/test-utils2']
+    },
+    resolveSnapshotPath: (testPath, snapExtension) => {
+      return path.join(
+        path.join(
+          path.dirname(testPath),
+          isVue3 ? '__snapshotsV3__' : '__snapshots__'
+        ),
+        `${path.basename(testPath)}${snapExtension}`
+      )
+    }
   }
 })

@@ -1,12 +1,20 @@
 {
+  "extends": "./tsconfig.base.json",
+  "files": [],
   "compilerOptions": {
     "composite": true,
     "module": "esnext",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "types": ["vite/client", "node", "vitest/globals"],
+    "paths": {
+      "@tests/utils": ["tests/utils"]
+    },
   },
   "include": [
+    "**/__test__/**/*.ts",
+    "tests/**/*.ts",
     "vite.config.ts",
     "vite.vue2.config.ts",
-    "vite.vue3.config.ts"
+    "vite.vue3.config.ts",
   ]
 }

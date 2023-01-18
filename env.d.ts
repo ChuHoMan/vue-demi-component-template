@@ -7,3 +7,6 @@ declare module '*.vue' {
     export default component
   }
   
+  declare module '@test/utils' {
+    export * from '@vue/test-utils'
+  }
