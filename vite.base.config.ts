@@ -49,7 +49,7 @@ export const baseBuildConfig = defineConfig({
       '__test__/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'
     ],
     alias: {
-      '@tests/utils': path.resolve(__dirname, `./tests/utils/vueTestUtils.ts`)
+      '@tests/utils': path.resolve(__dirname, `./tests/utils`)
     },
     setupFiles: [path.resolve(__dirname, 'tests/setup.ts')],
     deps: {

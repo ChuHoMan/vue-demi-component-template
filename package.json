@@ -25,11 +25,12 @@
 		"build:2": "vue-demi-switch 2 vue2 && pnpm --filter vue2-playground build",
 		"build:3": "vue-demi-switch 3 vue3 && pnpm --filter vue3-playground build",
 		"build:2.7": "vue-demi-switch 2.7 && pnpm --filter vue2.7-playground build",
-		"build": "rimraf ./dist && npm run build:2 && npm run build:2.7 && npm run build:3",
+		"build": "pnpm type-check && rimraf ./dist && npm run build:2 && npm run build:2.7 && npm run build:3",
 		"switch-test": "tsx tests/scripts/switchVueTestUtils.ts",
 		"test:2": "pnpm switch-test 2 && vue-demi-switch 2 && vitest run --config ./vue2-playground/vite.config.ts",
 		"test:3": "pnpm switch-test 3 && vue-demi-switch 3 vue3 && vitest run --config ./vue3-playground/vite.config.ts",
-		"test:all": "pnpm run test:2 && pnpm run test:3"
+		"test:all": "pnpm run test:2 && pnpm run test:3",
+		"type-check": "vue-tsc --noEmit"
 	},
 	"author": "ChuHoMan",
 	"license": "MIT",
@@ -60,11 +61,12 @@
 		"jsdom": "^19.0.0",
 		"rimraf": "^3.0.2",
 		"tsx": "^3.12.2",
+		"typescript": "^4.9.4",
 		"vite": "^4.0.4",
 		"vite-plugin-vue2": "^1.9.3",
 		"vitest": "^0.27.2",
 		"vue-template-compiler": "~2.6.14",
-		"vue-tsc": "^0.29.8",
+		"vue-tsc": "^1.0.24",
 		"vue2": "npm:vue@2",
 		"vue3": "npm:vue@3"
 	}
