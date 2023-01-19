@@ -1,4 +1,4 @@
-import { enableAutoUnmount, mount } from '@tests/utils'
+import { enableAutoUnmount, mount } from '@tests/utils/vueTestUtils'
 import TemplateComponent from '../src/TemplateComponent.vue'
 
 enableAutoUnmount(afterEach)

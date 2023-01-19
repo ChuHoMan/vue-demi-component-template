@@ -7,7 +7,7 @@
     "moduleResolution": "node",
     "types": ["vite/client", "node", "vitest/globals"],
     "paths": {
-      "@tests/utils": ["tests/utils"]
+      "@tests/utils/*": ["tests/utils/*"]
     },
   },
   "include": [
@@ -16,5 +16,6 @@
     "vite.config.ts",
     "vite.vue2.config.ts",
     "vite.vue3.config.ts",
+    "env.d.ts",
   ]
 }
