@@ -6,6 +6,16 @@
 <a href="https://github.com/ChuHoMan/vue-demi-component-template/blob/main/README.md">English</a> | <b>简体中文</b>
 </p>
 
+## 使用模板
+
+要直接使用此模板，请执行以下命令:
+
+```bash
+npx degit ChuHoMan/vue-demi-component-template my-component
+```
+
+并将 `vue-demi-component-template` 和 `VueDemiComponentTemplate` 全局替换为您的组件库名称。
+
 ## 安装
 
 确保先安装依赖：

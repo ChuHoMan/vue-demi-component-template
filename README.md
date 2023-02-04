@@ -6,6 +6,16 @@
 <b>English</b> | <a href="https://github.com/ChuHoMan/vue-demi-component-template/blob/main/README.zh-CN.md">简体中文</a>
 </p>
 
+## Template Usage
+
+To use this template, clone it down using:
+
+```bash
+npx degit ChuHoMan/vue-demi-component-template my-component
+```
+
+And do a global replace of `vue-demi-component-template` and `VueDemiComponentTemplate` with your component library name.
+
 ## Setup
 
 Make sure to install the dependencies:

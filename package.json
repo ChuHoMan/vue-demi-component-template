@@ -1,5 +1,5 @@
 {
-	"name": "vue-demi-component-template-monorepo",
+	"name": "vue-demi-component-template",
 	"private": true,
 	"version": "1.0.0",
 	"description": "template component for vue-demi, can dev and build",
