@@ -1,7 +1,7 @@
 <template>
   <div>
     <span>{{ vueVersion }}</span>
-    <template-component />
+    <vue-demi-template-component />
   </div>
 </template>
 

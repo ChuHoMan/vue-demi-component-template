@@ -24,7 +24,7 @@ export const baseBuildConfig = defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       formats: ['es', 'cjs', 'umd'],
-      name: 'index',
+      name: 'VueDemiTemplateComponent',
       fileName: (format) => `${outputName}.${format}.js`
     },
     rollupOptions: {

@@ -1,9 +1,9 @@
 {
 	"name": "vue3-playground",
 	"version": "1.0.0",
-    "private": true,
+	"private": true,
 	"scripts": {
-		"dev": "vue-demi-switch 3 vue3 && vite",
+		"dev": "vue-demi-switch 3 vue3 && vite --host",
 		"build": "vue-demi-switch 3 vue3 && vite build"
 	},
 	"author": "ChuHoMan",
@@ -21,7 +21,7 @@
 		}
 	},
 	"devDependencies": {
-		"vue": "^3.2.45",
-		"@vitejs/plugin-vue": "^2.3.3"
+		"@vitejs/plugin-vue": "^2.3.4",
+		"vue": "^3.2.47"
 	}
 }
