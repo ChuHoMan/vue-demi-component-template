@@ -38,6 +38,35 @@ pnpm run dev:2.7
 pnpm run dev:3
 ```
 
+## How to use dist file？
+
+### From CDN or without a Bundler
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.prod.js"></script>
+    <!-- Make sure your current directory has this umd asset -->
+    <script src="/dist/v3/index.umd.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <vue-demi-template-component></vue-demi-template-component>
+    </div>
+  </body>
+  <script>
+    const app = Vue.createApp({})
+    app.use(VueDemiTemplateComponent)
+    app.mount('#app')
+  </script>
+</html>
+```
+
 ## Production
 
 Build the library for production or publish:

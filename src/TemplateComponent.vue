@@ -9,7 +9,7 @@ import { templateComponentProps } from "./props";
 import { defineComponent } from "vue-demi";
 
 export default defineComponent({
-  name: "VueDemiComponentTemplate",
+  name: "VueDemiTemplateComponent",
   props: templateComponentProps,
   setup() {},
 });

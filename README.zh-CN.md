@@ -47,6 +47,35 @@ pnpm run dev:3
 pnpm run build
 ```
 
+## 如何使用 dist 文件？
+
+### 不使用构建工具或通过 `CDN` 引入
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.prod.js"></script>
+    <!-- 确保你的当前目录有该产物 -->
+    <script src="/dist/v3/index.umd.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <vue-demi-template-component></vue-demi-template-component>
+    </div>
+  </body>
+  <script>
+    const app = Vue.createApp({})
+    app.use(VueDemiTemplateComponent)
+    app.mount('#app')
+  </script>
+</html>
+```
+
 ## License
 
 Made with 💙
