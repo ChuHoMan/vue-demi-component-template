@@ -20,11 +20,11 @@
 	"scripts": {
 		"postinstall": "node scripts/postinstall.js",
 		"dev:2": "vue-demi-switch 2 vue2 && pnpm --filter vue2-playground dev",
-		"dev:2.7": "vue-demi-switch 2.7 && pnpm --filter vue2.7-playground dev",
+		"dev:2.7": "vue-demi-switch 2.7 vue2.7 && pnpm --filter vue2.7-playground dev",
 		"dev:3": "vue-demi-switch 3 vue3 && pnpm --filter vue3-playground dev",
 		"build:2": "vue-demi-switch 2 vue2 && pnpm --filter vue2-playground build",
 		"build:3": "vue-demi-switch 3 vue3 && pnpm --filter vue3-playground build",
-		"build:2.7": "vue-demi-switch 2.7 && pnpm --filter vue2.7-playground build",
+		"build:2.7": "vue-demi-switch 2.7 vue2.7 && pnpm --filter vue2.7-playground build",
 		"build": "pnpm type-check && rimraf ./dist && npm run build:2 && npm run build:2.7 && npm run build:3",
 		"switch-test": "tsx tests/scripts/switchVueTestUtils.ts",
 		"test:2": "pnpm switch-test 2 && vue-demi-switch 2 && vitest run --config ./vue2-playground/vite.config.ts",
@@ -67,7 +67,8 @@
 		"vitest": "^0.31.1",
 		"vue-template-compiler": "~2.6.14",
 		"vue-tsc": "^1.6.5",
-		"vue2": "npm:vue@2",
+		"vue2": "npm:vue@2.6",
+		"vue2.7": "npm:vue@2.7",
 		"vue3": "npm:vue@3"
 	}
 }
