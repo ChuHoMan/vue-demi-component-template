@@ -89,10 +89,6 @@ importers:
         version: 2.7.14
 
   vue3-playground:
-    dependencies:
-      '@vue/composition-api':
-        specifier: ^1.4.9
-        version: 1.7.1(vue@3.2.47)
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^2.3.4
