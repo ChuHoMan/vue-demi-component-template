@@ -4,7 +4,7 @@
   "compilerOptions": {
     "composite": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "types": ["vite/client", "node", "vitest/globals"],
     "paths": {
       "@tests/utils/*": ["tests/utils/*"]

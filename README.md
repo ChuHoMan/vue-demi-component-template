@@ -6,6 +6,13 @@
 <b>English</b> | <a href="https://github.com/ChuHoMan/vue-demi-component-template/blob/main/README.zh-CN.md">简体中文</a>
 </p>
 
+## Features
+
+- Development environment for library mode in Vue 2.6/2.7/3
+- Testing/building environment for library mode in Vue 2/3
+- dts solution for library mode in Vue 2.7/3 (partial support for Vue 2.6)
+- Script to adapt package.json during release
+
 ## Template Usage
 
 To use this template, clone it down using:

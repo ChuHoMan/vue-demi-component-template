@@ -1,11 +1,10 @@
 import TemplateSFC from './TemplateComponent.vue'
 import 'uno.css'
 
-const TemplateComponent = {
-  install(app: any, options: any) {
+export const TemplateComponent = {
+  install(app: any, options?: Record<string, unknown>) {
     console.log(options)
     app.component(TemplateSFC.name, TemplateSFC)
   }
 }
 
-export default TemplateComponent
