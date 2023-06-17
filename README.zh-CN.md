@@ -6,6 +6,13 @@
 <a href="https://github.com/ChuHoMan/vue-demi-component-template/blob/main/README.md">English</a> | <b>简体中文</b>
 </p>
 
+## 功能
+
+- 为 Vue2.6/2.7/3 提供库模式的开发环境
+- 为 Vue2/3 提供库模式的测试/构建环境
+- 提供 Vue2.7/3 库模式的 dts 解决方案（Vue 2.6 仅部分支持）
+- 在发布时用于适配 package.json 的脚本
+
 ## 使用模板
 
 要直接使用此模板，请执行以下命令:

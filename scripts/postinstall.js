@@ -27,9 +27,11 @@ async function switchVersion() {
   const exportJson = {
     main: `${distDir}/index.umd.js`,
     module: `${distDir}/index.es.js`,
+    types: `${distDir}/index.d.ts`,
     style: `${distDir}/style.css`,
     exports: {
       '.': {
+        types: `./${distDir}/index.d.ts`,
         import: `./${distDir}/index.es.js`,
         require: `./${distDir}/index.cjs.js`,
       }
