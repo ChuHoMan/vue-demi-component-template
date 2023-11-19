@@ -1,21 +1,21 @@
 {
-	"name": "vue3-playground",
-	"version": "1.0.0",
-	"private": true,
-	"scripts": {
-		"dev": "vue-demi-switch 3 vue3 && vite --host",
-		"build": "vue-demi-switch 3 vue3 && vite build"
-	},
-	"author": "ChuHoMan",
-	"license": "MIT",
-	"repository": {
-		"type": "git"
-	},
-	"peerDependencies": {
-		"vue": "^3.0.0"
-	},
-	"devDependencies": {
-		"@vitejs/plugin-vue": "^2.3.4",
-		"vue": "^3.3.4"
-	}
+  "name": "vue3-playground",
+  "version": "1.0.0",
+  "private": true,
+  "author": "ChuHoMan",
+  "license": "MIT",
+  "repository": {
+    "type": "git"
+  },
+  "scripts": {
+    "dev": "vue-demi-switch 3 vue3 && vite --host",
+    "build": "vue-demi-switch 3 vue3 && vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.4",
+    "vue": "^3.3.4"
+  }
 }

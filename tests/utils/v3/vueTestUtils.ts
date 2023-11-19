@@ -1,2 +1,1 @@
-export * from '@vue/test-utils'
-  
+export * from '@vue/test-utils';

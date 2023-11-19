@@ -1,32 +1,33 @@
 /// <reference types="vitest" />
-import { defineConfig, Plugin } from 'vite'
-import * as path from 'path'
-import { isVue2, isVue3 } from 'vue-demi'
-import Unocss from 'unocss/vite'
-//@ts-expect-error unocss
-import presetUno from '@unocss/preset-uno'
-import presetAttributify from '@unocss/preset-attributify'
-import DtsPlugin from 'vite-plugin-dts'
+import * as path from 'node:path';
+import { Plugin, defineConfig } from 'vite';
+import { isVue2, isVue3 } from 'vue-demi';
+import Unocss from 'unocss/vite';
 
-const outputName = 'index'
+// @ts-expect-error unocss
+import presetUno from '@unocss/preset-uno';
+import presetAttributify from '@unocss/preset-attributify';
+import DtsPlugin from 'vite-plugin-dts';
+
+const outputName = 'index';
 export const getSharedPlugins = (vueVersion: 'v2' | 'v2.7' | 'v3'): Plugin[] => [
   Unocss({
-    presets: [presetAttributify(), presetUno()]
+    presets: [presetAttributify(), presetUno()],
   }) as any,
   DtsPlugin({
     root: '..',
     compilerOptions: {
-      skipLibCheck: true
+      skipLibCheck: true,
     },
     // only compiler our component source code
     include: ['src/**'],
     // vue2.6 does not apply to this plugin, ignore the error, 2.6 or handwritten .d.ts is better
     skipDiagnostics: vueVersion === 'v2',
-    noEmitOnError: vueVersion === 'v2'
-  })
-]
+    noEmitOnError: vueVersion === 'v2',
+  }),
+];
 
-console.log('Vue version:', isVue2 ? 'v2' : 'v3')
+console.log('Vue version:', isVue2 ? 'v2' : 'v3');
 
 // https://vitejs.dev/config/
 export const baseBuildConfig = defineConfig({
@@ -37,43 +38,43 @@ export const baseBuildConfig = defineConfig({
       entry: path.resolve(__dirname, 'src/index.ts'),
       formats: ['es', 'cjs', 'umd'],
       name: 'VueDemiTemplateComponent',
-      fileName: (format) => `${outputName}.${format}.js`
+      fileName: format => `${outputName}.${format}.js`,
     },
     rollupOptions: {
       external: ['vue', '@vue/composition-api/dist/vue-composition-api.mjs'],
       output: {
         globals: {
-          vue: 'Vue',
+          'vue': 'Vue',
           '@vue/composition-api/dist/vue-composition-api.mjs':
-            'VueCompositionAPI'
-        }
-      }
-    }
+            'VueCompositionAPI',
+        },
+      },
+    },
   },
   optimizeDeps: {
-    exclude: ['vue-demi', 'vue', 'vue2', 'vue3']
+    exclude: ['vue-demi', 'vue', 'vue2', 'vue3'],
   },
   test: {
     globals: true,
     environment: 'jsdom',
     include: [
-      '__test__/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'
+      '__test__/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
     ],
     alias: {
-      '@tests/utils': path.resolve(__dirname, `./tests/utils`)
+      '@tests/utils': path.resolve(__dirname, `./tests/utils`),
     },
     setupFiles: [path.resolve(__dirname, 'tests/setup.ts')],
     deps: {
-      inline: ['vue2.7', 'vue2', '@vue/composition-api', 'vue-demi', '@vue/test-utils', '@vue/test-utils2']
+      inline: ['vue2.7', 'vue2', '@vue/composition-api', 'vue-demi', '@vue/test-utils', '@vue/test-utils2'],
     },
     resolveSnapshotPath: (testPath, snapExtension) => {
       return path.join(
         path.join(
           path.dirname(testPath),
-          isVue3 ? '__snapshotsV3__' : '__snapshots__'
+          isVue3 ? '__snapshotsV3__' : '__snapshots__',
         ),
-        `${path.basename(testPath)}${snapExtension}`
-      )
-    }
-  }
-})
+        `${path.basename(testPath)}${snapExtension}`,
+      );
+    },
+  },
+});
