@@ -1,6 +1,6 @@
 export const templateComponentProps = {
-    visible: {
-      type: Boolean,
-      default: false
-    }
-  }
+  visible: {
+    type: Boolean,
+    default: false,
+  },
+};

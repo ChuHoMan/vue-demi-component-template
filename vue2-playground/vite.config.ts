@@ -1,20 +1,20 @@
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
-import { createVuePlugin as vue2 } from 'vite-plugin-vue2'
-import { baseBuildConfig, getSharedPlugins } from '../vite.base.config'
+import { resolve } from 'node:path';
+import { defineConfig } from 'vite';
+import { createVuePlugin as vue2 } from 'vite-plugin-vue2';
+import { baseBuildConfig, getSharedPlugins } from '../vite.base.config';
 
 export const viteVue2Config = defineConfig({
   plugins: [vue2(), ...getSharedPlugins('v2')],
   server: {
-    port: 2000
+    port: 2000,
   },
   resolve: {
     alias: {
-      vue: resolve(__dirname, './node_modules/vue/dist/vue.runtime.esm.js'),
-      'vue-demi': resolve(__dirname, '../node_modules/vue-demi/lib/v2/index.mjs')
-    }
+      'vue': resolve(__dirname, './node_modules/vue/dist/vue.runtime.esm.js'),
+      'vue-demi': resolve(__dirname, '../node_modules/vue-demi/lib/v2/index.mjs'),
+    },
   },
-  ...baseBuildConfig
-})
+  ...baseBuildConfig,
+});
 
-export default viteVue2Config
+export default viteVue2Config;

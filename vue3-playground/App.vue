@@ -1,17 +1,10 @@
-<template>
-  <div>
-    <span>{{ vueVersion }}</span>
-    <vue-demi-template-component />
-  </div>
-</template>
-
 <script lang="ts">
-import { defineComponent, ref, isVue3, isVue2 } from "vue-demi";
+import { defineComponent, isVue2, isVue3, ref } from 'vue-demi';
 
 export default defineComponent({
-  name: "App",
+  name: 'App',
   setup() {
-    const vueVersion = ref(isVue2 ? "Vue2" : "Vue3");
+    const vueVersion = ref(isVue2 ? 'Vue2' : 'Vue3');
 
     console.warn(`Vue env: Vue3:${isVue3} -- Vue2: ${isVue2}`);
 
@@ -21,6 +14,13 @@ export default defineComponent({
   },
 });
 </script>
+
+<template>
+  <div>
+    <span>{{ vueVersion }}</span>
+    <vue-demi-template-component />
+  </div>
+</template>
 
 <style>
 body > div {
