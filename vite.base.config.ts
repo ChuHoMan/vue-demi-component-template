@@ -41,10 +41,14 @@ export const baseBuildConfig = defineConfig({
       fileName: format => `${outputName}.${format}.js`,
     },
     rollupOptions: {
-      external: ['vue', '@vue/composition-api/dist/vue-composition-api.mjs'],
+      external: ['vue',
+        '@vue/composition-api',
+        '@vue/composition-api/dist/vue-composition-api.mjs',
+      ],
       output: {
         globals: {
           'vue': 'Vue',
+          '@vue/composition-api': 'VueCompositionAPI',
           '@vue/composition-api/dist/vue-composition-api.mjs':
             'VueCompositionAPI',
         },
@@ -65,7 +69,7 @@ export const baseBuildConfig = defineConfig({
     },
     setupFiles: [path.resolve(__dirname, 'tests/setup.ts')],
     deps: {
-      inline: ['vue2.7', 'vue2', '@vue/composition-api', 'vue-demi', '@vue/test-utils', '@vue/test-utils2'],
+      inline: ['vue2.7', 'vue2', 'vue-demi', '@vue/test-utils', '@vue/test-utils2'],
     },
     resolveSnapshotPath: (testPath, snapExtension) => {
       return path.join(
