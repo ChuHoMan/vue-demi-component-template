@@ -3,7 +3,7 @@ import { defineComponent } from 'vue-demi';
 import { templateComponentProps } from './props';
 
 export default defineComponent({
-  name: 'VueDemiTemplateComponent',
+  name: 'VueDemiComponentTemplate',
   props: templateComponentProps,
   setup() {},
 });

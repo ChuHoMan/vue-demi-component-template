@@ -32,6 +32,16 @@ npx degit ChuHoMan/vue-demi-component-template my-component
 pnpm install
 ```
 
+> ⚠️ 重要提示：如果你使用 pnpm 10.x 版本，需要在 package.json 中添加以下配置：
+> ```json
+> {
+>   "pnpm": {
+>     "onlyBuiltDependencies": ["vue-demi-component-template"]
+>   }
+> }
+> ```
+> 这是因为 pnpm 10.x 默认会阻止 postinstall 脚本运行，而 vue-demi-component-template 需要依赖 postinstall 脚本来选择适配 Vue 版本的构建产物。详情可见 [pnpm/pnpm#8897](https://github.com/pnpm/pnpm/pull/8897)。
+
 ## 开发
 
 启动开发服务：
@@ -72,7 +82,7 @@ pnpm run build
   </head>
   <body>
     <div id="app">
-        <vue-demi-template-component></vue-demi-template-component>
+        <vue-demi-component-template></vue-demi-component-template>
     </div>
   </body>
   <script>

@@ -19,7 +19,7 @@ export default defineComponent({
 <template>
   <div>
     <span>{{ Vue2Version }}</span>
-    <vue-demi-template-component />
+    <vue-demi-component-template />
   </div>
 </template>
 
