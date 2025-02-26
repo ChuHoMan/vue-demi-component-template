@@ -32,6 +32,16 @@ Make sure to install the dependencies:
 pnpm install
 ```
 
+> ⚠️ Important:  If you are using pnpm 10.x, you need to add the following configuration in the package.json of the vue-demi-component-template project:
+> ```json
+> {
+>   "pnpm": {
+>     "onlyBuiltDependencies": ["vue-demi-component-template"]
+>   }
+> }
+> ```
+> This is because pnpm 10.x blocks postinstall scripts by default, while vue-demi-component-template relies on postinstall scripts to select the appropriate build artifacts for Vue version compatibility. For more details, see [pnpm/pnpm#8897](https://github.com/pnpm/pnpm/pull/8897).
+
 ## Development Server
 
 Start the development server
@@ -63,7 +73,7 @@ pnpm run dev:3
   </head>
   <body>
     <div id="app">
-        <vue-demi-template-component></vue-demi-template-component>
+        <vue-demi-component-template></vue-demi-component-template>
     </div>
   </body>
   <script>
